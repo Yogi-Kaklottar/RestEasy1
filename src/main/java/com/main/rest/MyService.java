@@ -1,5 +1,7 @@
 package com.main.rest;
 
+import java.util.List;
+
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -26,7 +28,14 @@ public class MyService{
 		s1.setName(name);
 		studentservice.insertStudent(s1);
 		System.out.println("Student insert");
-		return "Hello World"+name;
+		String dis="";
+		List<Student> ls=studentservice.displayStudent();
+		for(Student k :ls)
+		{
+			dis+="</br>"+k.toString();
+		}
+		
+		return dis;
 	}
 	
 	@POST
@@ -38,7 +47,14 @@ public class MyService{
 		s1.setName(name);
 		studentservice.updateStudent(s1, id);
 		System.out.println("data will be update");
-		return "student update";
+		String dis="";
+		List<Student> ls=studentservice.displayStudent();
+		for(Student k :ls)
+		{
+			dis+="</br>"+k.toString();
+		}
+		
+		return dis;
 	}
 	
 	@POST
@@ -47,7 +63,14 @@ public class MyService{
 	{
 		int id=Integer.parseInt(iid);
 		studentservice.deleteStudent(id);
-		return "student will be delete";
+		String dis="";
+		List<Student> ls=studentservice.displayStudent();
+		for(Student k :ls)
+		{
+			dis+="</br>"+k.toString();
+		}
+		
+		return dis;
 	}
 	
 	

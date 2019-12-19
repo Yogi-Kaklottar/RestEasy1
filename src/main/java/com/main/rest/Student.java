@@ -48,7 +48,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [getId()=" + getId() + ", getName()=" + getName() + "]";
+		return "Student [Id=" + getId() + ", Name=" + getName() + "]";
 	}
 
 }
