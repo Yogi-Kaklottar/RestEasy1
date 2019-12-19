@@ -8,8 +8,8 @@
 
 		<!-- <mapping-file>META-INF/persistence.xml</mapping-file> -->
 		
-<!-- 		<class>com.main.java.Dept</class> -->
-<!-- 		<class>com.main.java.Emp</class> -->
+		<class>com.main.rest.Student</class> 
+
 		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
 		<properties>
 			<property name="javax.persistence.jdbc.url"

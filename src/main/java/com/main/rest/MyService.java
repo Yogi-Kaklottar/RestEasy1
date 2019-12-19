@@ -1,29 +1,56 @@
 package com.main.rest;
 
+import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
+import com.google.inject.Inject;
+
 
 @Path("/hello")
 public class MyService{
+	@Inject
+	StudentService studentservice;
 	
-	@GET
-	@Path("{name}")
-	public String Greeting(@PathParam("name")final String name)
+	
+	@POST
+	@Path("/insert")
+	public String createStudent(@FormParam("name") String name)
 	{
-		System.out.println("Trst");
+		Student s1=new Student();
+		s1.setName(name);
+		studentservice.insertStudent(s1);
+		System.out.println("Student insert");
 		return "Hello World"+name;
 	}
 	
-	@GET
-	@Path("display")
-	public String display()
+	@POST
+	@Path("/update")
+	public String updateStudent(@FormParam("name") String name,@FormParam("id")  String iid)
 	{
-		System.out.println("display");
-		return "hello guice";
+		Student s1=new Student();
+		int id=Integer.parseInt(iid);
+		s1.setName(name);
+		studentservice.updateStudent(s1, id);
+		System.out.println("data will be update");
+		return "student update";
 	}
+	
+	@POST
+	@Path("/delete")
+	public String deleteStudent(@FormParam("id") String iid)
+	{
+		int id=Integer.parseInt(iid);
+		studentservice.deleteStudent(id);
+		return "student will be delete";
+	}
+	
+	
 	
 
 }
