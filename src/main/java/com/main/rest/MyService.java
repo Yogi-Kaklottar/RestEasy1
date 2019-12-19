@@ -28,12 +28,17 @@ public class MyService{
 		s1.setName(name);
 		studentservice.insertStudent(s1);
 		System.out.println("Student insert");
-		String dis="";
+		String ins="<a href='http://localhost:8080/sampleRESTEasy/insert.html'>insert</a>";
+		String up="<a href='http://localhost:8080/sampleRESTEasy/update.html'>update</a>";
+		String de="<a href='http://localhost:8080/sampleRESTEasy/delete.html'>delete</a>";
+		String dis=ins+"    "+up+"      "+de;
 		List<Student> ls=studentservice.displayStudent();
 		for(Student k :ls)
 		{
 			dis+="</br>"+k.toString();
 		}
+		
+		
 		
 		return dis;
 	}
@@ -47,12 +52,17 @@ public class MyService{
 		s1.setName(name);
 		studentservice.updateStudent(s1, id);
 		System.out.println("data will be update");
-		String dis="";
+		String ins="<a href='http://localhost:8080/sampleRESTEasy/insert.html'>insert</a>";
+		String up="<a href='http://localhost:8080/sampleRESTEasy/update.html'>update</a>";
+		String de="<a href='http://localhost:8080/sampleRESTEasy/delete.html'>delete</a>";
+		String dis=ins+"    "+up+"      "+de;
 		List<Student> ls=studentservice.displayStudent();
 		for(Student k :ls)
 		{
 			dis+="</br>"+k.toString();
 		}
+		
+		
 		
 		return dis;
 	}
@@ -63,12 +73,17 @@ public class MyService{
 	{
 		int id=Integer.parseInt(iid);
 		studentservice.deleteStudent(id);
-		String dis="";
+		String ins="<a href='http://localhost:8080/sampleRESTEasy/insert.html'>insert</a>";
+		String up="<a href='http://localhost:8080/sampleRESTEasy/update.html'>update</a>";
+		String de="<a href='http://localhost:8080/sampleRESTEasy/delete.html'>delete</a>";
+		String dis=ins+"    "+up+"      "+de;
 		List<Student> ls=studentservice.displayStudent();
 		for(Student k :ls)
 		{
 			dis+="</br>"+k.toString();
 		}
+		
+		
 		
 		return dis;
 	}
