@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Phone {
+public class PhoneNo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -14,12 +14,12 @@ public class Phone {
 	
 	private String number;
 
-	public Phone() {
+	public PhoneNo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Phone(int id, String number) {
+	public PhoneNo(int id, String number) {
 		super();
 		this.id = id;
 		this.number = number;
@@ -43,7 +43,7 @@ public class Phone {
 
 	@Override
 	public String toString() {
-		return "Phone [Id=" + getId() + ", Number=" + getNumber() + "]";
+		return "PhoneNo [Id=" + getId() + ", Number=" + getNumber() + "]";
 	}
 	
 	

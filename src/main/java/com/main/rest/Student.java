@@ -1,10 +1,14 @@
 package com.main.rest;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -20,8 +24,8 @@ public class Student {
 
 	private String name;
 	
-	//@ManyToOne
-	//private Department d;
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<PhoneNo> PhoneList;
 
 	public Student() {
 		super();
@@ -33,6 +37,15 @@ public class Student {
 		this.id = id;
 		this.name = name;
 		
+	}
+	
+
+	public List<PhoneNo> getPhoneList() {
+		return PhoneList;
+	}
+
+	public void setPhoneList(List<PhoneNo> phoneList) {
+		PhoneList = phoneList;
 	}
 
 	public int getId() {

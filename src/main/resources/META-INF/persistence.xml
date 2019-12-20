@@ -9,7 +9,7 @@
 		<!-- <mapping-file>META-INF/persistence.xml</mapping-file> -->
 		
 		<class>com.main.rest.Student</class> 
-		<class>com.main.rest.Phone</class>
+		<class>com.main.rest.PhoneNo</class>
 		
 
 		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
