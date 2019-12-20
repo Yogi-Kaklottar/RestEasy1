@@ -45,4 +45,12 @@ public class StudentImplement implements StudentService {
 		return l;
 	}
 
+	@Override
+	public Student GetStudent(int id) {
+			Student s=entitymanager.get().find(Student.class,id);
+			return s;
+	}
+
+	
+
 }
