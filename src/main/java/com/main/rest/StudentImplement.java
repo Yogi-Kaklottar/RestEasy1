@@ -98,36 +98,43 @@ public class StudentImplement implements StudentService {
 	
 	
 	@Override
+	@Transactional
 	public void insertStudentPhone(Student s) {
-		// TODO Auto-generated method stub
+		entitymanager.get().persist(s);
 		
 	}
 
 	@Override
+	@Transactional
 	public void UpdateStudentPhone(Student s, int id) {
-		// TODO Auto-generated method stub
+		Student s1=entitymanager.get().find(Student.class,id);
+		s1.setName(s.getName());
+		//s1.setPhoneList(s.getPhoneList());
 		
 	}
 
 	@Override
+	@Transactional
 	public void deleteStudentPhone(int id) {
-		// TODO Auto-generated method stub
+		Student s1=entitymanager.get().find(Student.class,id);
+		entitymanager.get().remove(s1);
 		
 	}
 
 	@Override
-	public List<Student> displayStudentPhone() {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public List<Student> displayStudentPhone() {// select s.id,s.name,p.number from student s,phoneno p,student_phoneno n where s.id=n.student_id and p.id=n.phonelist_id;
+		java.util.List<Student> list= entitymanager.get().createQuery("SELECT s FROM Student s").getResultList();
+		return list;
 	}
 
 	@Override
+	@Transactional
 	public Student getStudentPhone(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Student s=entitymanager.get().find(Student.class,id);
+		return s;
 	}
-	
-	
+
 	
 
 }

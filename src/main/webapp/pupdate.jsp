@@ -19,7 +19,7 @@
 	     	</tr>
 			<tr>
 				<td>Enter Your number:</td>
-				<td><input type="text" name="pname" value="<%=s.getNumber()%>"></td>
+				<td><input type="text" name="pname" value='<%=s.getNumber()%>'></td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="submit"></td>
